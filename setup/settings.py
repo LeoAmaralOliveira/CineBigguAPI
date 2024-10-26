@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cinemabiggu',
+        'USER': str(os.getenv('PSQL_USER')),
+        'PASSWORD': str(os.getenv('PSQL_PW')),
+        'HOST': str(os.getenv('PSQL_HOST')),
+        'PORT': str(os.getenv('PSQL_PORT'))
     }
 }
 
