@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from cinemabiggu.models import Movie
+from cinemabiggu.api.models.movie import Movie
 
 
 class MovieSerializer(serializers.ModelSerializer):

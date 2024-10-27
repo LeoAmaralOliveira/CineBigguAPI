@@ -1,5 +1,5 @@
 from django.contrib import admin
-from cinemabiggu.models import Movie
+from cinemabiggu.api.models import Movie
 
 
 class Movies(admin.ModelAdmin):
