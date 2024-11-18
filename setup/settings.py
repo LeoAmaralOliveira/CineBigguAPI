@@ -10,23 +10,25 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path, os
-from dotenv import load_dotenv
+import environ
+import os
 
-load_dotenv()
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = str(os.getenv('SECRET_KEY'))
+SECRET_KEY = env.str('SECRET_KEY', 'NO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -81,14 +83,10 @@ ASGI_APPLICATION = 'setup.asgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cinemabiggu',
-        'USER': str(os.getenv('PSQL_USER')),
-        'PASSWORD': str(os.getenv('PSQL_PW')),
-        'HOST': str(os.getenv('PSQL_HOST')),
-        'PORT': str(os.getenv('PSQL_PORT'))
-    }
+    'default': env.db_url(
+        'DATABASE_URL',
+        default='sqlite:///./test.db'
+    )
 }
 
 
