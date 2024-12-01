@@ -1,13 +1,14 @@
 from django.db import models
 
 
-class Actor(models.Model):
+class Genre(models.Model):
     name = models.CharField(
-        max_length=120, blank=False, null=False, unique=True
+        max_length=75,
+        blank=False,
+        null=False,
+        unique=True
     )
     description = models.TextField()
-    birth_date = models.DateField()
-    awards = models.JSONField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -1,3 +1,4 @@
-from .v1.movies import MovieSerializer
-from .v1.actors import ActorSerializer
-from .v1.characters import CharacterSerializer
+from .actors import ActorSerializer
+from .movies import MovieSerializer
+from .characters import CharacterSerializer
+from .genres import GenreSerializer
