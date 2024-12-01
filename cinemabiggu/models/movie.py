@@ -9,7 +9,7 @@ class Movie(models.Model):
         unique=True
     )
     description = models.TextField()
-    genre = models.CharField(max_length=75)
+    genre = models.ForeignKey('cinemabiggu.Genre', on_delete=models.CASCADE)
     duration = models.IntegerField(null=True, blank=True)
     release_date = models.DateField()
     avaliable = models.BooleanField(blank=True, null=True)
