@@ -13,9 +13,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import environ
 import os
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+env = environ.Env()
+env.read_env('.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = env.str('SECRET_KEY', 'NO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG')
+DEBUG = env.bool('DEBUG', False)
 
 ALLOWED_HOSTS = []
 
