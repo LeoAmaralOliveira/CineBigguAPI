@@ -1,3 +1,4 @@
-from .v1.movies import MovieViewSet
-from .v1.actors import ActorViewSet
-from .v1.characters import CharacterViewSet
+from .actors import ActorViewSet
+from .movies import MovieViewSet
+from .characters import CharacterViewSet
+from .genres import GenreViewSet
