@@ -5,4 +5,4 @@ from cinemabiggu.models import Room
 class RoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        fields = '__all__'
+        fields = ['room_id', 'capacity', 'imax']

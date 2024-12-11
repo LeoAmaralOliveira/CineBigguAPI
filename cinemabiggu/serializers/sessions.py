@@ -5,4 +5,4 @@ from cinemabiggu.models import Session
 class SessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Session
-        fields = '__all__'
+        fields = ['id', 'movie', 'room', 'start_time', 'end_time']
