@@ -24,7 +24,7 @@ class MovieSerializerTestCase(TestCase):
         movie_fields = set([
             'id', 'title', 'description',
             'genre', 'duration', 'release_date',
-            'avaliable', 'created_at', 'updated_at'
+            'avaliable'
         ])
         self.assertEqual(
             set(data.keys()),

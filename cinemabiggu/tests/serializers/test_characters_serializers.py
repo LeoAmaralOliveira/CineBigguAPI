@@ -35,8 +35,7 @@ class CharacterSerializerTestCase(TestCase):
         data = self.character_serializer.data
         character_fields = set([
             'id', 'name', 'description',
-            'movie', 'actor',
-            'created_at', 'updated_at'
+            'movie', 'actor'
         ])
         self.assertEqual(
             set(data.keys()),
