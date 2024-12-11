@@ -15,8 +15,7 @@ class RoomSerializerTestCase(TestCase):
     def test_room_keys(self):
         data = self.room_serializer.data
         room_fields = set([
-            'room_id', 'capacity', 'imax',
-            'created_at', 'updated_at'
+            'room_id', 'capacity', 'imax'
         ])
         self.assertEqual(
             set(data.keys()),

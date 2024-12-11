@@ -34,7 +34,7 @@ class TestSessionSerializer(TestCase):
         data = self.session_serializer.data
         session_fields = set([
             'id', 'movie', 'room', 'start_time',
-            'end_time', 'created_at', 'updated_at'
+            'end_time'
         ])
         self.assertEqual(
             set(data.keys()),

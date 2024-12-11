@@ -17,8 +17,7 @@ class ActorSerializerTestCase(TestCase):
         data = self.actor_serializer.data
         actor_fields = set([
             'id', 'name', 'description',
-            'birth_date', 'awards',
-            'created_at', 'updated_at'
+            'birth_date', 'awards'
         ])
         self.assertEqual(
             set(data.keys()),

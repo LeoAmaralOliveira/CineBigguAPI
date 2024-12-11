@@ -14,8 +14,7 @@ class GenreSerializerTestCase(TestCase):
     def test_genre_keys(self):
         data = self.genre_serializer.data
         genre_fields = set([
-            'id', 'name', 'description',
-            'created_at', 'updated_at'
+            'id', 'name', 'description'
         ])
         self.assertEqual(
             set(data.keys()),
